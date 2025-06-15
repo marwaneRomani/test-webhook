@@ -110,3 +110,4 @@ If you want to run in development mode with auto-reload:
 - The web app automatically reconnects to Redis if the connection is lost
 # CI/CD Webhook Test - 15 يونيو, 2025 +01 15:12:02
 # Webhook Test 2 - 15 يونيو, 2025 +01 15:20:11
+# CI/CD Pipeline Test - 15 يونيو, 2025 +01 16:05:18
