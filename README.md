@@ -108,3 +108,4 @@ If you want to run in development mode with auto-reload:
 - The application includes health checks for Redis connectivity
 - Both services are connected via a custom Docker network
 - The web app automatically reconnects to Redis if the connection is lost
+# CI/CD Webhook Test - 15 يونيو, 2025 +01 15:12:02
