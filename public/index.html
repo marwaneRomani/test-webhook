@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Simple Todo App</h1>
+            <p>A demo app with Docker & Redis</p>
+        </header>
+
+        <main>
+            <div class="add-todo">
+                <input type="text" id="todoInput" placeholder="Enter a new todo..." maxlength="100">
+                <button id="addBtn">Add Todo</button>
+            </div>
+
+            <div class="todos-container">
+                <ul id="todoList"></ul>
+            </div>
+
+            <div class="stats">
+                <span id="todoCount">0 todos</span>
+            </div>
+        </main>
+
+        <footer>
+            <div class="health-status">
+                <span id="healthStatus">Checking connection...</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
