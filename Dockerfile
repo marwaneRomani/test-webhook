@@ -1,6 +1,9 @@
 # Use the official Node.js runtime as the base image
 FROM node:18-alpine
 
+# Install curl for health checks (needed by deployer service)
+RUN apk add --no-cache curl
+
 # Set the working directory in the container
 WORKDIR /app
 
@@ -23,6 +26,10 @@ USER nextjs
 
 # Expose the port the app runs on
 EXPOSE 3000
+
+# Add health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+  CMD curl -f http://localhost:3000/health || exit 1
 
 # Define the command to run the application
 CMD ["npm", "start"]

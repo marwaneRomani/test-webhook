@@ -8,10 +8,17 @@ services:
       - NODE_ENV=production
       - REDIS_URL=redis://redis:6379
     depends_on:
-      - redis
+      redis:
+        condition: service_healthy
     restart: unless-stopped
     networks:
       - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
   # Redis database service
   redis:
@@ -24,6 +31,12 @@ services:
     networks:
       - app-network
     command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
     
   memcached:
     image: memcached:latest
@@ -32,6 +45,14 @@ services:
     ports:
       - "11211:11211"
     command: memcached -m 64 -o modern -v
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "echo", "stats", "|", "nc", "localhost", "11211"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 
 volumes:
   redis_data:
