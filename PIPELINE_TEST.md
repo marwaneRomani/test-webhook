@@ -6,3 +6,4 @@ Testing orchestrator working directory - 20250615_162815
 🎉 BUILDER FIXED! Testing complete end-to-end pipeline - 20250615_163332
 🎉 COMPLETE CI/CD PIPELINE FIXED AND REBUILT! - 20250615_164233
 Pipeline test 20250615_164352
+🔧 Registry URL Fixed - Testing with registry:5000 - 20250616_150101
