@@ -12,9 +12,9 @@ const client = redis.createClient({
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.json({ message: 'Todo App CI/CD Test hahahhhahah aaaaaaaaaaaaaa', version: '1.0.0' });
-});
+// app.get('/', (req, res) => {
+//   res.json({ message: 'Todo App CI/CD Test hahahhhahah aaaaaaaaaaaaaa', version: '1.0.0' });
+// });
 
 app.get('/health', (req, res) => {
   res.json({ status: 'healthy', timestamp: new Date().toISOString() });
